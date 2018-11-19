@@ -9,8 +9,8 @@
 
 // DOCUMENT READY FUNCTION BELOW
 
-var userChoice = "";
-var computerChoice = "";
+var userChoice;
+var computerChoice ;
 var winner = "";
 var randomNumber = Math.floor((Math.random() * 3) + 1);
 
@@ -21,6 +21,12 @@ $("#shoot").click(function(){
 userChoice = $("#input").val();
 $("#userChoice").text(userChoice);
 
+if (userChoice != "rock","paper","scissors"){
+    
+     $("#result").text("Not A Valid Answer. Try Again");
+    
+     
+}
    
     
     if(randomNumber == 1 ){
@@ -101,5 +107,16 @@ $("#userChoice").text(userChoice);
         $("#result").text("Tie!");
         
     }
+    
+    $(".try").show();
 }); 
+
+$(".try").click(function(){
+    
+    
+ window.location.reload();
+    
+    
+});
+
 });
